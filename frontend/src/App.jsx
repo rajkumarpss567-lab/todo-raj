@@ -1,85 +1,52 @@
 import { useEffect, useState } from 'react';
-import { getHealth, getTodos, createTodo, updateTodo, deleteTodo } from './api';
-import TodoList from './components/TodoList';
+import { getHealth } from './api';
+import TodosPage from './pages/TodosPage';
+import RemindersPage from './pages/RemindersPage';
 
 export default function App() {
   const [health, setHealth] = useState(null);
   const [healthError, setHealthError] = useState(null);
-  const [todos, setTodos] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [currentPage, setCurrentPage] = useState('todos');
 
   useEffect(() => {
     getHealth().then(setHealth).catch((err) => setHealthError(err.message));
   }, []);
 
-  useEffect(() => {
-    fetchTodos();
-  }, []);
-
-  const fetchTodos = async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const data = await getTodos();
-      const todosList = Array.isArray(data) ? data : data.results || [];
-      setTodos(todosList);
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleAdd = async (formData) => {
-    try {
-      const newTodo = await createTodo(formData);
-      setTodos([...todos, newTodo]);
-    } catch (err) {
-      setError(err.message);
-    }
-  };
-
-  const handleUpdate = async (id, data) => {
-    try {
-      const updatedTodo = await updateTodo(id, data);
-      setTodos(todos.map((t) => (t.id === id ? updatedTodo : t)));
-    } catch (err) {
-      setError(err.message);
-    }
-  };
-
-  const handleDelete = async (id) => {
-    try {
-      await deleteTodo(id);
-      setTodos(todos.filter((t) => t.id !== id));
-    } catch (err) {
-      setError(err.message);
-    }
-  };
-
   return (
-    <main className="page">
-      <header>
-        <h1>Todo App</h1>
-        <p className="lede">Organize your tasks efficiently.</p>
-      </header>
+    <>
+      <nav className="navbar">
+        <div className="navbar-container">
+          <div className="navbar-brand">
+            <h1 className="navbar-title">Task Manager</h1>
+          </div>
+          <ul className="navbar-nav">
+            <li>
+              <button
+                className={`nav-link ${currentPage === 'todos' ? 'active' : ''}`}
+                onClick={() => setCurrentPage('todos')}
+              >
+                Todos
+              </button>
+            </li>
+            <li>
+              <button
+                className={`nav-link ${currentPage === 'reminders' ? 'active' : ''}`}
+                onClick={() => setCurrentPage('reminders')}
+              >
+                Reminders
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div className="health-indicator">
+          {health && <span className="health-ok" title="Connected">●</span>}
+          {healthError && <span className="health-bad" title={`Error: ${healthError}`}>●</span>}
+          {!health && !healthError && <span className="health-checking" title="Checking...">●</span>}
+        </div>
+      </nav>
 
-      <section className="card">
-        <h2>Backend</h2>
-        {health && <p className="ok">Connected — {health.service}</p>}
-        {healthError && <p className="bad">Cannot reach the API: {healthError}</p>}
-        {!health && !healthError && <p className="muted">Checking...</p>}
-      </section>
-
-      <TodoList
-        todos={todos}
-        onAdd={handleAdd}
-        onUpdate={handleUpdate}
-        onDelete={handleDelete}
-        loading={loading}
-        error={error}
-      />
-    </main>
+      {currentPage === 'todos' && <TodosPage />}
+      {currentPage === 'reminders' && <RemindersPage />}
+    </>
   );
 }
