@@ -29,23 +29,54 @@ export default function TodoList({
     handleEditSave(id, { completed: !todo.completed });
   };
 
+  const completedCount = todos.filter(t => t.completed).length;
+  const completionPercentage = todos.length > 0 ? Math.round((completedCount / todos.length) * 100) : 0;
+
   return (
-    <section className="card">
-      <h2>Your Todos</h2>
-      {error && <p className="bad">Error: {error}</p>}
+    <section className="todo-page-container">
+      <div className="todo-page-header">
+        <div>
+          <h1 className="todo-page-title">Your Todos</h1>
+          <p className="todo-page-subtitle">Stay organized and productive</p>
+        </div>
+        {todos.length > 0 && (
+          <div className="progress-widget">
+            <div className="progress-stat">
+              <span className="progress-number">{completedCount}</span>
+              <span className="progress-label">Done</span>
+            </div>
+            <div className="progress-bar-container">
+              <div className="progress-bar" style={{ width: `${completionPercentage}%` }}></div>
+            </div>
+            <span className="progress-percentage">{completionPercentage}%</span>
+          </div>
+        )}
+      </div>
+
+      {error && <div className="todo-error-banner">Error: {error}</div>}
       
-      <TodoForm onSubmit={onAdd} />
+      <div className="todo-input-section">
+        <TodoForm onSubmit={onAdd} />
+      </div>
 
       {loading ? (
-        <p className="muted">Loading todos...</p>
+        <div className="todo-loading-state">
+          <div className="spinner"></div>
+          <p>Loading your todos...</p>
+        </div>
       ) : todos.length === 0 ? (
-        <p className="muted">No todos yet. Create one above!</p>
+        <div className="todo-empty-state">
+          <div className="empty-todo-icon">📝</div>
+          <h3>No todos yet</h3>
+          <p>Create your first todo above to get started!</p>
+        </div>
       ) : (
         <div className="todo-list">
-          {todos.map((todo) => (
+          {todos.map((todo, index) => (
             <TodoItem
               key={todo.id}
               todo={todo}
+              index={index}
               isEditing={editingId === todo.id}
               onToggle={() => handleToggle(todo.id, todo)}
               onEdit={(data) => handleEditSave(todo.id, data)}

@@ -57,9 +57,9 @@ export default function Calendar({ onDateSelect, selectedDate }) {
   return (
     <div className="calendar">
       <div className="calendar-header">
-        <button className="calendar-nav-btn" onClick={handlePrevMonth}>←</button>
+        <button className="calendar-nav-btn" onClick={handlePrevMonth} title="Previous month">←</button>
         <h3 className="calendar-month">{monthName}</h3>
-        <button className="calendar-nav-btn" onClick={handleNextMonth}>→</button>
+        <button className="calendar-nav-btn" onClick={handleNextMonth} title="Next month">→</button>
       </div>
 
       <div className="calendar-weekdays">
@@ -77,6 +77,7 @@ export default function Calendar({ onDateSelect, selectedDate }) {
             className={`calendar-day ${day ? 'active' : 'empty'} ${isToday(day) ? 'today' : ''} ${isSelected(day) ? 'selected' : ''}`}
             onClick={() => day && handleDateClick(day)}
             disabled={!day}
+            title={day ? `Select ${currentDate.toLocaleString('default', { month: 'long' })} ${day}` : ''}
           >
             {day}
           </button>
