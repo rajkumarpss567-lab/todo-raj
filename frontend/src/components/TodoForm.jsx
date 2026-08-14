@@ -25,22 +25,29 @@ export default function TodoForm({ onSubmit }) {
 
   return (
     <form className="todo-form" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="What needs to be done?"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        disabled={submitting}
-        autoFocus
-      />
-      <input
-        type="text"
-        placeholder="Description (optional)"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-        disabled={submitting}
-      />
-      <button type="submit" disabled={submitting || !title.trim()}>
+      <div className="todo-form-group">
+        <input
+          type="text"
+          className="todo-form-input todo-form-title-input"
+          placeholder="✓ What needs to be done?"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          disabled={submitting}
+          autoFocus
+        />
+      </div>
+      <div className="todo-form-group">
+        <input
+          type="text"
+          className="todo-form-input todo-form-desc-input"
+          placeholder="+ Add a description (optional)"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          disabled={submitting}
+        />
+      </div>
+      <button type="submit" className="todo-form-submit" disabled={submitting || !title.trim()}>
+        <span className="submit-icon">+</span>
         {submitting ? 'Adding...' : 'Add Todo'}
       </button>
     </form>

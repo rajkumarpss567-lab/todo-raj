@@ -53,12 +53,7 @@ export default function TodosPage() {
   };
 
   return (
-    <div className="page">
-      <header>
-        <h1>Todos</h1>
-        <p className="lede">Manage your tasks.</p>
-      </header>
-
+    <div className="todos-page">
       <TodoList
         todos={todos}
         onAdd={handleAdd}

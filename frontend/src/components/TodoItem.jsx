@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 export default function TodoItem({
   todo,
+  index,
   isEditing,
   onToggle,
   onEdit,
@@ -95,7 +96,10 @@ export default function TodoItem({
   }
 
   return (
-    <div className={`todo-item ${todo.completed ? 'completed' : ''}`}>
+    <div 
+      className={`todo-item ${todo.completed ? 'completed' : ''}`}
+      style={{ '--delay': `${index * 0.05}s` }}
+    >
       <div className="todo-checkbox-wrapper">
         <input
           type="checkbox"
@@ -113,15 +117,17 @@ export default function TodoItem({
           className="edit-btn"
           onClick={onStartEdit}
           disabled={deleting}
+          title="Edit todo"
         >
-          Edit
+          ✎
         </button>
         <button
           className="delete-btn"
           onClick={handleDelete}
           disabled={deleting}
+          title="Delete todo"
         >
-          {deleting ? 'Deleting...' : 'Delete'}
+          🗑
         </button>
       </div>
     </div>
