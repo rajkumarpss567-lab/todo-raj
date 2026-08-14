@@ -51,61 +51,87 @@ export default function RemindersPage() {
   const dateReminders = selectedDate ? getRemindersForDate(selectedDate) : [];
 
   return (
-    <div className="page reminders-page">
-      <header>
-        <h1>Reminders</h1>
-        <p className="lede">Click on a date to view reminders.</p>
-      </header>
-
+    <div className="reminders-page-full">
       {error && (
-        <div className="card error-card">
+        <div className="card error-card error-banner">
           <p className="bad">Error: {error}</p>
         </div>
       )}
 
-      <div className="reminders-centered-container">
+      <div className="reminders-hero">
         {loading ? (
-          <div className="muted">Loading calendar...</div>
-        ) : (
-          <div className="card calendar-large">
-            <Calendar onDateSelect={handleDateSelect} selectedDate={selectedDate} />
+          <div className="reminders-loading">
+            <div className="spinner"></div>
+            <p className="muted">Loading calendar...</p>
           </div>
+        ) : (
+          <>
+            <h1 className="reminders-title">Calendar Reminders</h1>
+            <div className="calendar-card">
+              <Calendar onDateSelect={handleDateSelect} selectedDate={selectedDate} />
+            </div>
+          </>
         )}
       </div>
 
       {showModal && (
         <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-header">
-              <h2 className="modal-title">
-                {selectedDate.toLocaleDateString('default', {
-                  weekday: 'long',
-                  month: 'long',
-                  day: 'numeric',
-                  year: 'numeric',
-                })}
-              </h2>
-              <button className="modal-close-btn" onClick={closeModal}>×</button>
+          <div className="modal-content detail-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header detail-modal-header">
+              <div className="modal-date-display">
+                <div className="modal-date-day">{selectedDate.getDate()}</div>
+                <div className="modal-date-info">
+                  <div className="modal-date-weekday">
+                    {selectedDate.toLocaleDateString('default', { weekday: 'long' })}
+                  </div>
+                  <div className="modal-date-month">
+                    {selectedDate.toLocaleDateString('default', { month: 'short', year: 'numeric' })}
+                  </div>
+                </div>
+              </div>
+              <button className="modal-close-btn" onClick={closeModal}>
+                <span>✕</span>
+              </button>
             </div>
 
-            {dateReminders.length > 0 ? (
-              <ul className="modal-reminders-list">
-                {dateReminders.map((todo) => (
-                  <li key={todo.id} className={`modal-reminder-item ${todo.completed ? 'completed' : ''}`}>
-                    <h3 className="modal-reminder-title">{todo.title}</h3>
-                    {todo.description && <p className="modal-reminder-description">{todo.description}</p>}
-                    <p className="modal-reminder-date">
-                      {new Date(todo.created_at).toLocaleTimeString([], {
-                        hour: '2-digit',
-                        minute: '2-digit',
-                      })}
-                    </p>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="modal-empty-state">No reminders for this date</p>
-            )}
+            <div className="modal-body">
+              {dateReminders.length > 0 ? (
+                <>
+                  <div className="reminders-count">
+                    {dateReminders.length} reminder{dateReminders.length !== 1 ? 's' : ''}
+                  </div>
+                  <ul className="detail-reminders-list">
+                    {dateReminders.map((todo) => (
+                      <li key={todo.id} className={`detail-reminder-item ${todo.completed ? 'completed' : ''}`}>
+                        <div className="reminder-status-indicator">
+                          <div className={`status-dot ${todo.completed ? 'done' : 'pending'}`}></div>
+                        </div>
+                        <div className="reminder-details">
+                          <h3 className="detail-reminder-title">{todo.title}</h3>
+                          {todo.description && (
+                            <p className="detail-reminder-description">{todo.description}</p>
+                          )}
+                          <div className="reminder-meta">
+                            <span className="reminder-time">
+                              {new Date(todo.created_at).toLocaleTimeString([], {
+                                hour: '2-digit',
+                                minute: '2-digit',
+                              })}
+                            </span>
+                            {todo.completed && <span className="reminder-badge">Completed</span>}
+                          </div>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : (
+                <div className="modal-empty-state">
+                  <div className="empty-icon">📭</div>
+                  <p>No reminders for this date</p>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       )}
