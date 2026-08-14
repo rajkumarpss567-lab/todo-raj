@@ -1,4 +1,4 @@
-name: codegen_19_task_10
+name: codegen_19_task_11_task_10
 
 services:
   backend:
@@ -37,4 +37,4 @@ volumes:
 
 networks:
   app:
-    name: codegen_19_task_10_net
+    name: codegen_19_task_11_task_10_net
