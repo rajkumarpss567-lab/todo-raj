@@ -1,0 +1,48 @@
+:root {
+  --bg: #faf9f5;
+  --surface: #ffffff;
+  --ink: #1f1e1c;
+  --muted: #6f6a60;
+  --accent: #c25f3c;
+  --line: #e5e1d6;
+  --ok: #3f7d58;
+  --bad: #b4442f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1b19; --surface: #26251f; --ink: #f3f0e7;
+    --muted: #a29d90; --line: #3a382f; --accent: #d97d5a;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.page { max-width: 42rem; margin: 0 auto; padding: 3rem 1.25rem; }
+
+h1 {
+  font-family: ui-serif, Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin: 0 0 .4rem;
+}
+
+.lede { color: var(--muted); margin: 0 0 2rem; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.25rem 1.4rem;
+}
+
+.card h2 { margin: 0 0 .6rem; font-size: 1.05rem; }
+.ok { color: var(--ok); margin: 0; }
+.bad { color: var(--bad); margin: 0; }
+.muted { color: var(--muted); margin: 0; }
