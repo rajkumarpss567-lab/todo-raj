@@ -12,4 +12,21 @@ async function request(path, options = {}) {
 }
 
 export const getHealth = () => request('/health/');
+
+export const getTodos = () => request('/todos/');
+
+export const createTodo = (data) => request('/todos/', {
+  method: 'POST',
+  body: JSON.stringify(data),
+});
+
+export const updateTodo = (id, data) => request(`/todos/${id}/`, {
+  method: 'PATCH',
+  body: JSON.stringify(data),
+});
+
+export const deleteTodo = (id) => request(`/todos/${id}/`, {
+  method: 'DELETE',
+});
+
 export default request;
