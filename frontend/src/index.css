@@ -6206,3 +6206,1071 @@ h1 {
     transform: translateY(0);
   }
 }
+
+/* ===== SERVICES PAGE ===== */
+.services-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bg) 0%, var(--surface) 100%);
+  padding: 0;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem;
+}
+
+.services-hero-neo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 5rem;
+  animation: slideUp 0.6s ease-out;
+  padding: 3rem;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.services-hero-neo:hover {
+  border-color: var(--accent);
+  box-shadow: 0 12px 48px rgba(194, 95, 60, 0.12);
+}
+
+.services-hero-content-neo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.neo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--surface);
+  border: 2px solid var(--accent);
+  border-radius: 50px;
+  width: fit-content;
+  animation: fadeIn 0.8s ease-out;
+  box-shadow: 0 4px 12px rgba(194, 95, 60, 0.15);
+}
+
+.neo-badge span:first-child {
+  font-size: 1.2rem;
+}
+
+.neo-badge span:last-child {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.services-hero-title-neo {
+  font-family: ui-serif, Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.services-hero-title-neo .accent-text {
+  background: linear-gradient(135deg, var(--accent), var(--ok));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.services-hero-subtitle-neo {
+  font-size: 1.1rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.hero-cta-neo {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary-neo,
+.btn-secondary-neo {
+  padding: 0.9rem 1.8rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn-primary-neo {
+  background: linear-gradient(135deg, var(--accent), var(--ok));
+  color: white;
+  box-shadow: 0 4px 15px rgba(194, 95, 60, 0.3);
+}
+
+.btn-primary-neo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(194, 95, 60, 0.4);
+}
+
+.btn-secondary-neo {
+  background: var(--surface);
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  box-shadow: 0 4px 12px rgba(194, 95, 60, 0.1);
+}
+
+.btn-secondary-neo:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.hero-stats-neo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  animation: slideInRight 0.6s ease-out;
+}
+
+.stat-item-neo {
+  padding: 1.5rem;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.stat-item-neo:hover {
+  background: var(--surface);
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(194, 95, 60, 0.1);
+}
+
+.stat-value-neo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+.stat-label-neo {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.services-section-neo {
+  margin-bottom: 5rem;
+  animation: slideUp 0.6s ease-out;
+}
+
+.section-header-neo {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.section-title-neo {
+  font-family: ui-serif, Georgia, serif;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 700;
+  margin: 0 0 1rem;
+  background: linear-gradient(135deg, var(--accent), var(--ok));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-subtitle-neo {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.features-grid-neo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+.feature-card-neo {
+  --delay: 0s;
+  padding: 2rem;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  animation: slideInUp 0.6s ease-out var(--delay) both;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card-neo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--ok));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.feature-card-neo:hover {
+  border-color: var(--accent);
+  box-shadow: 0 12px 32px rgba(194, 95, 60, 0.15);
+  transform: translateY(-6px);
+}
+
+.feature-card-neo:hover::before {
+  transform: scaleX(1);
+}
+
+.card-icon-neo {
+  font-size: 2.5rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.card-title-neo {
+  margin: 0 0 0.75rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.card-description-neo {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.packages-grid-neo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+.package-card-neo {
+  --delay: 0s;
+  padding: 2.5rem;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  animation: slideInUp 0.6s ease-out var(--delay) both;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.package-card-neo.featured {
+  border-color: var(--accent);
+  box-shadow: 0 8px 32px rgba(194, 95, 60, 0.15);
+  transform: scale(1.02);
+}
+
+.package-card-neo:hover,
+.package-card-neo.featured:hover {
+  border-color: var(--accent);
+  box-shadow: 0 12px 40px rgba(194, 95, 60, 0.2);
+  transform: translateY(-8px);
+}
+
+.package-badge-neo {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  background: linear-gradient(135deg, rgba(194, 95, 60, 0.1), rgba(63, 125, 88, 0.1));
+  color: var(--accent);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  align-self: center;
+}
+
+.package-badge-neo.featured-badge {
+  background: linear-gradient(135deg, var(--accent), var(--ok));
+  color: white;
+}
+
+.package-price-neo {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0;
+}
+
+.package-price-neo span {
+  font-size: 1rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.package-description-neo {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.package-features-neo {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.package-features-neo li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+
+.check-icon-neo {
+  color: var(--ok);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.package-btn-neo {
+  padding: 0.9rem 1.5rem;
+  background: linear-gradient(135deg, rgba(194, 95, 60, 0.1), rgba(63, 125, 88, 0.1));
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.9rem;
+}
+
+.package-btn-neo:hover {
+  background: linear-gradient(135deg, var(--accent), var(--ok));
+  color: white;
+  transform: translateY(-2px);
+}
+
+.package-btn-neo.featured-btn {
+  background: linear-gradient(135deg, var(--accent), var(--ok));
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(194, 95, 60, 0.3);
+}
+
+.package-btn-neo.featured-btn:hover {
+  box-shadow: 0 8px 25px rgba(194, 95, 60, 0.4);
+}
+
+.workflow-cards-neo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.workflow-card-neo {
+  --delay: 0s;
+  padding: 2rem;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 14px;
+  text-align: center;
+  transition: all 0.3s ease;
+  animation: slideInUp 0.6s ease-out var(--delay) both;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.workflow-card-neo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--ok));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.workflow-card-neo:hover {
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px rgba(194, 95, 60, 0.12);
+  transform: translateY(-4px);
+}
+
+.workflow-card-neo:hover::before {
+  transform: scaleX(1);
+}
+
+.step-number-neo {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent), var(--ok));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+.step-title-neo {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.step-description-neo {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.benefits-grid-neo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+.benefit-card-neo {
+  --delay: 0s;
+  padding: 2.5rem;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  animation: slideInUp 0.6s ease-out var(--delay) both;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.benefit-card-neo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--ok));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.benefit-card-neo:hover {
+  border-color: var(--accent);
+  box-shadow: 0 12px 32px rgba(194, 95, 60, 0.15);
+  transform: translateY(-6px);
+}
+
+.benefit-card-neo:hover::before {
+  transform: scaleX(1);
+}
+
+.benefit-icon-neo {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.benefit-title-neo {
+  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.benefit-text-neo {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.why-us-grid-neo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+.why-us-card-neo {
+  --delay: 0s;
+  padding: 2.5rem;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  animation: slideInUp 0.6s ease-out var(--delay) both;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.why-us-card-neo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--ok));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.why-us-card-neo:hover {
+  border-color: var(--accent);
+  box-shadow: 0 12px 32px rgba(194, 95, 60, 0.15);
+  transform: translateY(-6px);
+}
+
+.why-us-card-neo:hover::before {
+  transform: scaleX(1);
+}
+
+.why-us-icon-neo {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.why-us-title-neo {
+  margin: 0 0 0.75rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.why-us-text-neo {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.sla-grid-neo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.sla-card-neo {
+  padding: 2rem;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 14px;
+  text-align: center;
+  transition: all 0.3s ease;
+  animation: slideInUp 0.6s ease-out both;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.sla-card-neo:hover {
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px rgba(194, 95, 60, 0.12);
+  transform: translateY(-4px);
+}
+
+.sla-icon-neo {
+  font-size: 2rem;
+  color: var(--ok);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.sla-title-neo {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sla-value-neo {
+  margin: 0 0 0.75rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: ui-serif, Georgia, serif;
+}
+
+.sla-description-neo {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.testimonials-grid-neo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+.testimonial-card-neo {
+  --delay: 0s;
+  padding: 2.5rem;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  animation: slideInUp 0.6s ease-out var(--delay) both;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-card-neo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--ok));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.testimonial-card-neo:hover {
+  border-color: var(--accent);
+  box-shadow: 0 12px 32px rgba(194, 95, 60, 0.15);
+  transform: translateY(-6px);
+}
+
+.testimonial-card-neo:hover::before {
+  transform: scaleX(1);
+}
+
+.testimonial-stars-neo {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.testimonial-quote-neo {
+  margin: 0 0 1rem;
+  color: var(--ink);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.testimonial-author-neo {
+  margin: 0 0 0.25rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.testimonial-company-neo {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.services-cta-section-neo {
+  background: linear-gradient(135deg, var(--accent), var(--ok));
+  border-radius: 20px;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: white;
+  animation: slideUp 0.6s ease-out 0.4s both;
+  box-shadow: 0 16px 48px rgba(194, 95, 60, 0.25);
+}
+
+.cta-title-neo {
+  font-family: ui-serif, Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  margin: 0 0 1rem;
+}
+
+.cta-subtitle-neo {
+  font-size: 1.15rem;
+  margin: 0 0 2rem;
+  opacity: 0.95;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button-neo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem 2.5rem;
+  background: white;
+  color: var(--accent);
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button-neo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button-neo:active {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 1024px) {
+  .services-container {
+    padding: 2.5rem 1rem;
+  }
+
+  .services-hero-neo {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .hero-stats-neo {
+    gap: 1.5rem;
+  }
+
+  .features-grid-neo,
+  .packages-grid-neo,
+  .benefits-grid-neo,
+  .why-us-grid-neo {
+    gap: 2rem;
+  }
+
+  .package-card-neo.featured {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-container {
+    padding: 2rem 1rem;
+  }
+
+  .services-hero-neo {
+    padding: 2rem;
+    margin-bottom: 3rem;
+    border-radius: 16px;
+  }
+
+  .services-hero-title-neo {
+    font-size: 1.8rem;
+  }
+
+  .services-hero-subtitle-neo {
+    font-size: 1rem;
+  }
+
+  .hero-stats-neo {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .stat-value-neo {
+    font-size: 1.5rem;
+  }
+
+  .stat-label-neo {
+    font-size: 0.75rem;
+  }
+
+  .features-grid-neo,
+  .packages-grid-neo,
+  .benefits-grid-neo,
+  .workflow-cards-neo,
+  .why-us-grid-neo,
+  .sla-grid-neo,
+  .testimonials-grid-neo {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .feature-card-neo,
+  .package-card-neo,
+  .benefit-card-neo,
+  .workflow-card-neo,
+  .why-us-card-neo,
+  .sla-card-neo,
+  .testimonial-card-neo {
+    padding: 1.75rem;
+  }
+
+  .section-title-neo {
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle-neo {
+    font-size: 1rem;
+  }
+
+  .hero-cta-neo {
+    gap: 0.75rem;
+  }
+
+  .btn-primary-neo,
+  .btn-secondary-neo {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .services-cta-section-neo {
+    padding: 3rem 1.5rem;
+  }
+
+  .cta-title-neo {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .cta-subtitle-neo {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-button-neo {
+    padding: 1rem 2rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .services-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .services-hero-neo {
+    padding: 1.5rem;
+    margin-bottom: 2.5rem;
+    gap: 1.5rem;
+  }
+
+  .services-hero-title-neo {
+    font-size: 1.4rem;
+  }
+
+  .services-hero-subtitle-neo {
+    font-size: 0.9rem;
+  }
+
+  .hero-stats-neo {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .stat-value-neo {
+    font-size: 1.3rem;
+  }
+
+  .stat-label-neo {
+    font-size: 0.7rem;
+  }
+
+  .stat-item-neo {
+    padding: 1rem;
+  }
+
+  .features-grid-neo,
+  .packages-grid-neo,
+  .benefits-grid-neo,
+  .workflow-cards-neo,
+  .why-us-grid-neo,
+  .sla-grid-neo,
+  .testimonials-grid-neo {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .feature-card-neo,
+  .package-card-neo,
+  .benefit-card-neo,
+  .workflow-card-neo,
+  .why-us-card-neo,
+  .sla-card-neo,
+  .testimonial-card-neo {
+    padding: 1.5rem;
+  }
+
+  .card-icon-neo,
+  .benefit-icon-neo,
+  .why-us-icon-neo {
+    font-size: 2rem;
+  }
+
+  .card-title-neo,
+  .benefit-title-neo,
+  .why-us-title-neo {
+    font-size: 1.05rem;
+  }
+
+  .card-description-neo,
+  .benefit-text-neo,
+  .why-us-text-neo {
+    font-size: 0.9rem;
+  }
+
+  .section-title-neo {
+    font-size: 1.5rem;
+  }
+
+  .section-subtitle-neo {
+    font-size: 0.95rem;
+  }
+
+  .section-header-neo {
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta-neo {
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .btn-primary-neo,
+  .btn-secondary-neo {
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.85rem;
+  }
+
+  .package-price-neo {
+    font-size: 2rem;
+  }
+
+  .package-features-neo {
+    gap: 0.5rem;
+  }
+
+  .package-features-neo li {
+    font-size: 0.85rem;
+  }
+
+  .package-btn-neo {
+    padding: 0.8rem 1.25rem;
+    font-size: 0.8rem;
+  }
+
+  .step-number-neo {
+    font-size: 2rem;
+  }
+
+  .step-title-neo {
+    font-size: 1rem;
+  }
+
+  .step-description-neo {
+    font-size: 0.85rem;
+  }
+
+  .sla-value-neo {
+    font-size: 1.5rem;
+  }
+
+  .sla-title-neo {
+    font-size: 0.8rem;
+  }
+
+  .sla-description-neo {
+    font-size: 0.8rem;
+  }
+
+  .testimonial-quote-neo {
+    font-size: 0.9rem;
+  }
+
+  .testimonial-author-neo {
+    font-size: 0.9rem;
+  }
+
+  .testimonial-company-neo {
+    font-size: 0.8rem;
+  }
+
+  .services-cta-section-neo {
+    padding: 2.5rem 1rem;
+    border-radius: 16px;
+  }
+
+  .cta-title-neo {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-subtitle-neo {
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .cta-button-neo {
+    padding: 0.9rem 1.75rem;
+    font-size: 0.85rem;
+    width: 100%;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
