@@ -111,6 +111,15 @@ export default function TodoItem({
       <div className="todo-content">
         <h3 className="todo-title">{todo.title}</h3>
         {todo.description && <p className="todo-description">{todo.description}</p>}
+        {todo.attachments && todo.attachments.length > 0 && (
+          <div className="todo-attachments">
+            {todo.attachments.map((attachment, idx) => (
+              <div key={idx} className="todo-attachment">
+                <img src={attachment.data} alt={attachment.name || `Attachment ${idx + 1}`} />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
       <div className="todo-actions">
         <button

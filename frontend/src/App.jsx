@@ -3,6 +3,7 @@ import { getHealth } from './api';
 import TodosPage from './pages/TodosPage';
 import RemindersPage from './pages/RemindersPage';
 import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
 
 export default function App() {
   const [health, setHealth] = useState(null);
@@ -45,6 +46,14 @@ export default function App() {
                 About
               </button>
             </li>
+            <li>
+              <button
+                className={`nav-link ${currentPage === 'contact' ? 'active' : ''}`}
+                onClick={() => setCurrentPage('contact')}
+              >
+                Contact
+              </button>
+            </li>
           </ul>
         </div>
         <div className="health-indicator">
@@ -57,6 +66,7 @@ export default function App() {
       {currentPage === 'todos' && <TodosPage />}
       {currentPage === 'reminders' && <RemindersPage />}
       {currentPage === 'about' && <AboutPage />}
+      {currentPage === 'contact' && <ContactPage />}
     </>
   );
 }

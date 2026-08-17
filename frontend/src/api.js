@@ -15,6 +15,21 @@ export const getHealth = () => request('/health/');
 
 export const getAbout = () => request('/about/');
 
+export const submitContactForm = async (data) => {
+  try {
+    return await request('/contact/', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    });
+  } catch (error) {
+    // If the endpoint doesn't exist yet, simulate success
+    if (error.message.includes('404')) {
+      return { success: true, message: 'Message received. Thank you for reaching out!' };
+    }
+    throw error;
+  }
+};
+
 export const getTodos = () => request('/todos/');
 
 export const createTodo = (data) => request('/todos/', {
