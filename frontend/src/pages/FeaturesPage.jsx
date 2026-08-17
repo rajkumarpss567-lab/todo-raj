@@ -1,293 +1,235 @@
 export default function FeaturesPage() {
-  const features = [
-    {
-      id: 1,
-      icon: '✓',
-      title: 'Smart Task Management',
-      description: 'Create, organize, and prioritize your tasks effortlessly. Add descriptions, set priorities, and track your progress in real-time.',
-      details: ['Quick add interface', 'Priority levels', 'Progress tracking', 'Bulk actions']
-    },
-    {
-      id: 2,
-      icon: '🔔',
-      title: 'Smart Reminders',
-      description: 'Never miss an important deadline. Set reminders for your tasks and receive timely notifications to keep you on track.',
-      details: ['Scheduled alerts', 'Recurring reminders', 'Custom timing', 'Multi-device sync']
-    },
-    {
-      id: 3,
-      icon: '📅',
-      title: 'Calendar View',
-      description: 'Visualize your tasks and reminders on an interactive calendar. Plan your weeks and months with ease.',
-      details: ['Monthly overview', 'Day view modal', 'Event clustering', 'Quick navigation']
-    },
-    {
-      id: 4,
-      icon: '📱',
-      title: 'Fully Responsive',
-      description: 'Access your tasks from any device. Our responsive design works seamlessly on mobile, tablet, and desktop.',
-      details: ['Mobile optimized', 'Touch-friendly', 'Adaptive layout', 'Fast loading']
-    },
-    {
-      id: 5,
-      icon: '🌓',
-      title: 'Dark Mode Support',
-      description: 'Choose your preferred theme. Automatically switches based on system preferences for a comfortable viewing experience.',
-      details: ['System sync', 'Eye comfort', 'Energy saving', 'Custom colors']
-    },
-    {
-      id: 6,
-      icon: '⚡',
-      title: 'Lightning Fast',
-      description: 'Built with modern technologies for blazing-fast performance. Experience smooth interactions and instant feedback.',
-      details: ['React + Vite', 'Optimized builds', 'Fast API', 'Smooth animations']
-    },
-    {
-      id: 7,
-      icon: '🔒',
-      title: 'Secure & Private',
-      description: 'Your data is encrypted and stored securely. We never share your personal information with third parties.',
-      details: ['End-to-end encryption', 'Privacy first', 'No tracking', 'Open source']
-    },
-    {
-      id: 8,
-      icon: '🎨',
-      title: 'Beautiful UI',
-      description: 'Enjoy a modern, intuitive interface designed with the latest UX trends. Every detail is crafted for your comfort.',
-      details: ['Gradient design', 'Smooth transitions', 'Accessibility', 'Haptic feedback']
-    }
-  ];
-
-  const capabilities = [
-    { number: '1000+', label: 'Task Capacity' },
-    { number: '∞', label: 'Reminders' },
-    { number: '24/7', label: 'Availability' },
-    { number: '0ms', label: 'Latency' }
-  ];
-
   return (
     <div className="features-page">
       <div className="features-container">
-        {/* Hero Section */}
-        <section className="features-hero">
-          <div className="features-hero-background">
-            <div className="features-hero-blob features-hero-blob-1"></div>
-            <div className="features-hero-blob features-hero-blob-2"></div>
-            <div className="features-hero-blob features-hero-blob-3"></div>
-          </div>
-
-          <div className="features-hero-content">
-            <div className="features-badge">
-              <span className="features-badge-icon">✨</span>
-              <span className="features-badge-text">Powerful Features</span>
+        {/* Hero Section with Neomorphic Design */}
+        <div className="features-hero-neo">
+          <div className="features-hero-content-neo">
+            <div className="neo-badge">
+              <span>✨</span>
+              <span>Premium Features</span>
             </div>
 
-            <h1 className="features-title">
-              Everything You Need to Stay Productive
+            <h1 className="features-hero-title-neo">
+              Everything You Need to <span className="accent-text">Manage Tasks</span> Efficiently
             </h1>
 
-            <p className="features-subtitle">
-              Discover our comprehensive suite of features designed to help you manage tasks, set reminders, and achieve your goals with ease.
+            <p className="features-hero-subtitle-neo">
+              Powerful features designed to simplify your workflow and boost productivity. From smart reminders to seamless synchronization, we've got you covered.
             </p>
 
-            <div className="features-hero-capabilities">
-              {capabilities.map((cap) => (
-                <div key={cap.label} className="capability-item">
-                  <div className="capability-number">{cap.number}</div>
-                  <div className="capability-label">{cap.label}</div>
-                </div>
-              ))}
+            <div className="hero-cta-neo">
+              <button className="btn-primary-neo">Get Started Now</button>
+              <button className="btn-secondary-neo">Learn More</button>
             </div>
           </div>
-        </section>
 
-        {/* Main Features Grid */}
-        <section className="features-showcase">
-          <h2 className="features-section-title">Core Features</h2>
-          <p className="features-section-subtitle">
-            Powerful tools built to streamline your workflow and maximize productivity
-          </p>
+          <div className="hero-stats-neo">
+            <div className="stat-item-neo">
+              <div className="stat-value-neo">1000+</div>
+              <div className="stat-label-neo">Daily Tasks</div>
+            </div>
+            <div className="stat-item-neo">
+              <div className="stat-value-neo">100%</div>
+              <div className="stat-label-neo">Open Source</div>
+            </div>
+            <div className="stat-item-neo">
+              <div className="stat-value-neo">⚡</div>
+              <div className="stat-label-neo">Fast & Snappy</div>
+            </div>
+            <div className="stat-item-neo">
+              <div className="stat-value-neo">∞</div>
+              <div className="stat-label-neo">Scalable</div>
+            </div>
+          </div>
+        </div>
 
-          <div className="features-grid">
-            {features.map((feature, index) => (
-              <div key={feature.id} className="feature-showcase-card" style={{ '--delay': `${index * 0.08}s` }}>
-                <div className="feature-card-header">
-                  <div className="feature-card-icon">{feature.icon}</div>
-                  <h3 className="feature-card-title">{feature.title}</h3>
-                </div>
+        {/* Core Features Section */}
+        <section className="features-section-neo">
+          <div className="section-header-neo">
+            <h2 className="section-title-neo">Core Features</h2>
+            <p className="section-subtitle-neo">Everything you need to manage tasks like a pro</p>
+          </div>
 
-                <p className="feature-card-description">{feature.description}</p>
+          <div className="features-grid-neo">
+            <div className="feature-card-neo" style={{ '--idx': '0' }}>
+              <div className="card-icon-neo">📝</div>
+              <h3 className="card-title-neo">Task Management</h3>
+              <p className="card-description-neo">Create, edit, and organize tasks with ease. Set priorities, deadlines, and custom categories to stay organized.</p>
+            </div>
 
-                <div className="feature-details-list">
-                  {feature.details.map((detail) => (
-                    <div key={detail} className="detail-item">
-                      <span className="detail-check">✓</span>
-                      <span>{detail}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
+            <div className="feature-card-neo" style={{ '--idx': '1' }}>
+              <div className="card-icon-neo">🔔</div>
+              <h3 className="card-title-neo">Smart Reminders</h3>
+              <p className="card-description-neo">Get intelligent notifications at the right time. Never miss a deadline with our advanced reminder system.</p>
+            </div>
+
+            <div className="feature-card-neo" style={{ '--idx': '2' }}>
+              <div className="card-icon-neo">📅</div>
+              <h3 className="card-title-neo">Calendar Integration</h3>
+              <p className="card-description-neo">Visualize your tasks on an interactive calendar. See everything at a glance and plan your week perfectly.</p>
+            </div>
+
+            <div className="feature-card-neo" style={{ '--idx': '3' }}>
+              <div className="card-icon-neo">☁️</div>
+              <h3 className="card-title-neo">Cloud Sync</h3>
+              <p className="card-description-neo">Access your tasks anywhere, anytime. Real-time synchronization across all your devices.</p>
+            </div>
+
+            <div className="feature-card-neo" style={{ '--idx': '4' }}>
+              <div className="card-icon-neo">🌙</div>
+              <h3 className="card-title-neo">Dark Mode</h3>
+              <p className="card-description-neo">Easy on the eyes with our beautiful dark mode. Switch between themes based on your preference.</p>
+            </div>
+
+            <div className="feature-card-neo" style={{ '--idx': '5' }}>
+              <div className="card-icon-neo">🔒</div>
+              <h3 className="card-title-neo">Secure & Private</h3>
+              <p className="card-description-neo">Your data is encrypted and secure. We prioritize your privacy and security above all else.</p>
+            </div>
           </div>
         </section>
 
         {/* How It Works Section */}
-        <section className="features-how-it-works">
-          <h2 className="features-section-title">How It Works</h2>
-          <p className="features-section-subtitle">
-            Get started in seconds with our intuitive workflow
-          </p>
+        <section className="features-section-neo">
+          <div className="section-header-neo">
+            <h2 className="section-title-neo">How It Works</h2>
+            <p className="section-subtitle-neo">Get started in three simple steps</p>
+          </div>
 
-          <div className="workflow-steps">
-            <div className="workflow-step">
-              <div className="step-icon step-icon-1">1</div>
-              <div className="step-content">
-                <h3>Create Your Tasks</h3>
-                <p>Add tasks quickly with title, description, and priority. Organize everything in your personal workspace.</p>
-              </div>
+          <div className="workflow-cards-neo">
+            <div className="workflow-card-neo">
+              <div className="step-number-neo">1</div>
+              <h3 className="step-title-neo">Create Tasks</h3>
+              <p className="step-description-neo">Add your tasks with title, description, and deadline to get started managing your work.</p>
             </div>
 
-            <div className="workflow-connector"></div>
-
-            <div className="workflow-step">
-              <div className="step-icon step-icon-2">2</div>
-              <div className="step-content">
-                <h3>Set Reminders</h3>
-                <p>Never forget important deadlines. Set reminders for specific dates and times to stay on track.</p>
-              </div>
+            <div className="workflow-card-neo">
+              <div className="step-number-neo">2</div>
+              <h3 className="step-title-neo">Set Reminders</h3>
+              <p className="step-description-neo">Configure smart reminders to receive notifications at the perfect time before your deadlines.</p>
             </div>
 
-            <div className="workflow-connector"></div>
-
-            <div className="workflow-step">
-              <div className="step-icon step-icon-3">3</div>
-              <div className="step-content">
-                <h3>Track & Celebrate</h3>
-                <p>Monitor your progress with visual indicators. Complete tasks and celebrate your achievements.</p>
-              </div>
+            <div className="workflow-card-neo">
+              <div className="step-number-neo">3</div>
+              <h3 className="step-title-neo">Complete & Track</h3>
+              <p className="step-description-neo">Mark tasks as done and track your progress. Celebrate your accomplishments and stay motivated.</p>
             </div>
           </div>
         </section>
 
         {/* Advanced Capabilities */}
-        <section className="features-advanced">
-          <h2 className="features-section-title">Advanced Capabilities</h2>
-          <p className="features-section-subtitle">
-            Everything you need for professional task management
-          </p>
+        <section className="features-section-neo">
+          <div className="section-header-neo">
+            <h2 className="section-title-neo">Advanced Capabilities</h2>
+            <p className="section-subtitle-neo">Power features for advanced users</p>
+          </div>
 
-          <div className="capabilities-grid">
-            <div className="capability-card">
-              <div className="capability-icon">🚀</div>
-              <h3>Performance</h3>
-              <p>Optimized for speed with instant search, filtering, and sorting capabilities. No lag, no delays.</p>
+          <div className="benefits-grid-neo">
+            <div className="benefit-card-neo" style={{ '--idx': '0' }}>
+              <div className="benefit-icon-neo">🎯</div>
+              <h3 className="benefit-title-neo">Priority Levels</h3>
+              <p className="benefit-text-neo">Mark tasks as urgent, high, medium, or low priority to focus on what matters most.</p>
             </div>
 
-            <div className="capability-card">
-              <div className="capability-icon">🔄</div>
-              <h3>Sync Across Devices</h3>
-              <p>Your tasks sync in real-time. Start on your phone, continue on your laptop, finish on your tablet.</p>
+            <div className="benefit-card-neo" style={{ '--idx': '1' }}>
+              <div className="benefit-icon-neo">🏷️</div>
+              <h3 className="benefit-title-neo">Smart Tags</h3>
+              <p className="benefit-text-neo">Organize tasks with custom tags for better categorization and quick filtering.</p>
             </div>
 
-            <div className="capability-card">
-              <div className="capability-icon">📊</div>
-              <h3>Analytics</h3>
-              <p>Gain insights into your productivity. See how many tasks you complete and track trends over time.</p>
+            <div className="benefit-card-neo" style={{ '--idx': '2' }}>
+              <div className="benefit-icon-neo">⏰</div>
+              <h3 className="benefit-title-neo">Time Tracking</h3>
+              <p className="benefit-text-neo">Track time spent on tasks and analyze your productivity patterns over time.</p>
             </div>
 
-            <div className="capability-card">
-              <div className="capability-icon">🎯</div>
-              <h3>Smart Prioritization</h3>
-              <p>Set priority levels for your tasks. Never lose sight of what's most important.</p>
+            <div className="benefit-card-neo" style={{ '--idx': '3' }}>
+              <div className="benefit-icon-neo">📊</div>
+              <h3 className="benefit-title-neo">Analytics</h3>
+              <p className="benefit-text-neo">View detailed insights about your task completion rates and productivity trends.</p>
             </div>
 
-            <div className="capability-card">
-              <div className="capability-icon">🌐</div>
-              <h3>Web & Mobile</h3>
-              <p>Access from any browser or device. No downloads required. Everything is web-based.</p>
+            <div className="benefit-card-neo" style={{ '--idx': '4' }}>
+              <div className="benefit-icon-neo">👥</div>
+              <h3 className="benefit-title-neo">Collaboration</h3>
+              <p className="benefit-text-neo">Share tasks with team members and collaborate on projects seamlessly.</p>
             </div>
 
-            <div className="capability-card">
-              <div className="capability-icon">💾</div>
-              <h3>Auto-Save</h3>
-              <p>Never lose your work. Every change is automatically saved to keep your data safe.</p>
+            <div className="benefit-card-neo" style={{ '--idx': '5' }}>
+              <div className="benefit-icon-neo">🔄</div>
+              <h3 className="benefit-title-neo">Recurring Tasks</h3>
+              <p className="benefit-text-neo">Set up recurring tasks for daily, weekly, or monthly routines automatically.</p>
             </div>
           </div>
         </section>
 
-        {/* Integration Section */}
-        <section className="features-integration">
-          <h2 className="features-section-title">Built with Modern Tech</h2>
-          <p className="features-section-subtitle">
-            Powered by the latest web technologies for reliability and performance
-          </p>
+        {/* Technology Stack */}
+        <section className="features-section-neo">
+          <div className="section-header-neo">
+            <h2 className="section-title-neo">Built with Modern Tech</h2>
+            <p className="section-subtitle-neo">Powered by the latest technologies</p>
+          </div>
 
-          <div className="tech-showcase">
-            <div className="tech-item">
-              <div className="tech-logo">⚛</div>
-              <h3>React 18</h3>
-              <p>Modern UI framework with hooks and concurrent features</p>
+          <div className="tech-grid-neo">
+            <div className="tech-card-neo" style={{ '--idx': '0' }}>
+              <div className="tech-icon-neo">⚛️</div>
+              <h3 className="tech-name-neo">React</h3>
+              <p className="tech-desc-neo">Modern UI library for fast, responsive interfaces</p>
             </div>
 
-            <div className="tech-item">
-              <div className="tech-logo">🔧</div>
-              <h3>Django + DRF</h3>
-              <p>Powerful backend with REST API and excellent security</p>
+            <div className="tech-card-neo" style={{ '--idx': '1' }}>
+              <div className="tech-icon-neo">🐍</div>
+              <h3 className="tech-name-neo">Django</h3>
+              <p className="tech-desc-neo">Robust backend framework with excellent security</p>
             </div>
 
-            <div className="tech-item">
-              <div className="tech-logo">⚡</div>
-              <h3>Vite</h3>
-              <p>Next-generation frontend build tool for instant development</p>
+            <div className="tech-card-neo" style={{ '--idx': '2' }}>
+              <div className="tech-icon-neo">⚡</div>
+              <h3 className="tech-name-neo">Vite</h3>
+              <p className="tech-desc-neo">Lightning-fast build tool for optimal performance</p>
             </div>
 
-            <div className="tech-item">
-              <div className="tech-logo">🐳</div>
-              <h3>Docker</h3>
-              <p>Containerized deployment for consistency and reliability</p>
+            <div className="tech-card-neo" style={{ '--idx': '3' }}>
+              <div className="tech-icon-neo">🐳</div>
+              <h3 className="tech-name-neo">Docker</h3>
+              <p className="tech-desc-neo">Containerized deployment for reliability</p>
             </div>
           </div>
         </section>
 
-        {/* Benefits Section */}
-        <section className="features-benefits">
-          <div className="benefits-content">
-            <h2 className="benefits-title">Why Choose Task Manager?</h2>
-            <div className="benefits-grid">
-              <div className="benefit-item">
-                <div className="benefit-number">01</div>
-                <h3 className="benefit-title-small">Free Forever</h3>
-                <p>Access all core features at no cost. No hidden fees, no credit card required.</p>
-              </div>
+        {/* Benefits Showcase */}
+        <section className="features-section-neo">
+          <div className="section-header-neo">
+            <h2 className="section-title-neo">Why Choose Us?</h2>
+          </div>
 
-              <div className="benefit-item">
-                <div className="benefit-number">02</div>
-                <h3 className="benefit-title-small">Open Source</h3>
-                <p>Transparent and community-driven. See the code and contribute improvements.</p>
-              </div>
+          <div className="benefits-grid-neo">
+            <div className="benefit-card-neo">
+              <div className="benefit-icon-neo">🚀</div>
+              <h3 className="benefit-title-neo">Lightning Fast</h3>
+              <p className="benefit-text-neo">Optimized performance ensures smooth experience</p>
+            </div>
 
-              <div className="benefit-item">
-                <div className="benefit-number">03</div>
-                <h3 className="benefit-title-small">Privacy First</h3>
-                <p>Your data is yours. No tracking, no analytics, just pure productivity.</p>
-              </div>
+            <div className="benefit-card-neo">
+              <div className="benefit-icon-neo">🎨</div>
+              <h3 className="benefit-title-neo">Beautiful Design</h3>
+              <p className="benefit-text-neo">Modern neomorphic UI that's a pleasure to use</p>
+            </div>
 
-              <div className="benefit-item">
-                <div className="benefit-number">04</div>
-                <h3 className="benefit-title-small">Always Available</h3>
-                <p>Accessible 24/7 from any device with an internet connection.</p>
-              </div>
+            <div className="benefit-card-neo">
+              <div className="benefit-icon-neo">📱</div>
+              <h3 className="benefit-title-neo">Fully Responsive</h3>
+              <p className="benefit-text-neo">Perfect experience on desktop, tablet, and mobile</p>
             </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="features-cta">
-          <div className="features-cta-content">
-            <h2>Ready to Boost Your Productivity?</h2>
-            <p>Start using Task Manager today and take control of your tasks, reminders, and goals.</p>
-            <button className="features-cta-button">Get Started Now</button>
-          </div>
+        <section className="features-cta-section-neo">
+          <h2 className="cta-title-neo">Ready to Transform Your Productivity?</h2>
+          <p className="cta-subtitle-neo">Join thousands of users already managing their tasks efficiently with our app</p>
+          <button className="cta-button-neo">Start Using Now</button>
         </section>
       </div>
     </div>
