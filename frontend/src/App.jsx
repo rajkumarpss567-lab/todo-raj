@@ -4,6 +4,7 @@ import TodosPage from './pages/TodosPage';
 import RemindersPage from './pages/RemindersPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import FeaturesPage from './pages/FeaturesPage';
 
 export default function App() {
   const [health, setHealth] = useState(null);
@@ -40,6 +41,14 @@ export default function App() {
             </li>
             <li>
               <button
+                className={`nav-link ${currentPage === 'features' ? 'active' : ''}`}
+                onClick={() => setCurrentPage('features')}
+              >
+                Features
+              </button>
+            </li>
+            <li>
+              <button
                 className={`nav-link ${currentPage === 'about' ? 'active' : ''}`}
                 onClick={() => setCurrentPage('about')}
               >
@@ -65,6 +74,7 @@ export default function App() {
 
       {currentPage === 'todos' && <TodosPage />}
       {currentPage === 'reminders' && <RemindersPage />}
+      {currentPage === 'features' && <FeaturesPage />}
       {currentPage === 'about' && <AboutPage />}
       {currentPage === 'contact' && <ContactPage />}
     </>
