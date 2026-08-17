@@ -6207,11 +6207,34 @@ h1 {
   }
 }
 
-/* ===== SERVICES PAGE ===== */
+/* ===== SERVICES PAGE WITH GLASSMORPHISM ===== */
 .services-page {
   min-height: 100vh;
   background: linear-gradient(135deg, var(--bg) 0%, var(--surface) 100%);
   padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(194, 95, 60, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(63, 125, 88, 0.08) 0%, transparent 50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem;
+  position: relative;
+  z-index: 1;
 }
 
 .services-container {
@@ -6228,16 +6251,41 @@ h1 {
   margin-bottom: 5rem;
   animation: slideUp 0.6s ease-out;
   padding: 3rem;
-  background: var(--surface);
-  border: 2px solid var(--line);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.15);
   border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15),
+              inset 0 1px 1px rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
+  position: relative;
+}
+
+.services-hero-neo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(194, 95, 60, 0.05), rgba(63, 125, 88, 0.05));
+  border-radius: 20px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.services-hero-neo > * {
+  position: relative;
+  z-index: 1;
 }
 
 .services-hero-neo:hover {
-  border-color: var(--accent);
-  box-shadow: 0 12px 48px rgba(194, 95, 60, 0.12);
+  border-color: rgba(194, 95, 60, 0.4);
+  box-shadow: 0 12px 48px rgba(194, 95, 60, 0.2),
+              inset 0 1px 1px rgba(255, 255, 255, 0.3),
+              0 8px 32px rgba(31, 38, 135, 0.15);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .services-hero-content-neo {
@@ -6415,12 +6463,15 @@ h1 {
 .feature-card-neo {
   --delay: 0s;
   padding: 2rem;
-  background: var(--surface);
-  border: 2px solid var(--line);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.12);
   border-radius: 16px;
   transition: all 0.3s ease;
   animation: slideInUp 0.6s ease-out var(--delay) both;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1),
+              inset 0 1px 1px rgba(255, 255, 255, 0.15);
   position: relative;
   overflow: hidden;
 }
@@ -6439,9 +6490,12 @@ h1 {
 }
 
 .feature-card-neo:hover {
-  border-color: var(--accent);
-  box-shadow: 0 12px 32px rgba(194, 95, 60, 0.15);
+  border-color: rgba(194, 95, 60, 0.3);
+  box-shadow: 0 12px 48px rgba(194, 95, 60, 0.2),
+              inset 0 1px 1px rgba(255, 255, 255, 0.2),
+              0 8px 32px rgba(31, 38, 135, 0.1);
   transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .feature-card-neo:hover::before {
@@ -6478,12 +6532,15 @@ h1 {
 .package-card-neo {
   --delay: 0s;
   padding: 2.5rem;
-  background: var(--surface);
-  border: 2px solid var(--line);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.12);
   border-radius: 16px;
   transition: all 0.3s ease;
   animation: slideInUp 0.6s ease-out var(--delay) both;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1),
+              inset 0 1px 1px rgba(255, 255, 255, 0.15);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -6493,16 +6550,20 @@ h1 {
 }
 
 .package-card-neo.featured {
-  border-color: var(--accent);
-  box-shadow: 0 8px 32px rgba(194, 95, 60, 0.15);
+  border-color: rgba(194, 95, 60, 0.4);
+  box-shadow: 0 12px 48px rgba(194, 95, 60, 0.2),
+              inset 0 1px 1px rgba(255, 255, 255, 0.2);
   transform: scale(1.02);
+  background: rgba(194, 95, 60, 0.12);
 }
 
 .package-card-neo:hover,
 .package-card-neo.featured:hover {
-  border-color: var(--accent);
-  box-shadow: 0 12px 40px rgba(194, 95, 60, 0.2);
+  border-color: rgba(194, 95, 60, 0.3);
+  box-shadow: 0 16px 48px rgba(194, 95, 60, 0.25),
+              inset 0 1px 1px rgba(255, 255, 255, 0.2);
   transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .package-badge-neo {

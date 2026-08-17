@@ -2,7 +2,7 @@ export default function ServicesPage() {
   return (
     <div className="services-page">
       <div className="services-container">
-        {/* Hero Section with Neomorphic Design */}
+        {/* Hero Section with Glassmorphism */}
         <div className="services-hero-neo">
           <div className="services-hero-content-neo">
             <div className="neo-badge">
@@ -52,37 +52,37 @@ export default function ServicesPage() {
           </div>
 
           <div className="features-grid-neo">
-            <div className="feature-card-neo" style={{ '--idx': '0' }}>
+            <div className="feature-card-neo" style={{ '--delay': '0s' }}>
               <div className="card-icon-neo">💼</div>
               <h3 className="card-title-neo">Consultation</h3>
               <p className="card-description-neo">Expert guidance to assess your current workflow and identify optimization opportunities for maximum efficiency.</p>
             </div>
 
-            <div className="feature-card-neo" style={{ '--idx': '1' }}>
+            <div className="feature-card-neo" style={{ '--delay': '0.1s' }}>
               <div className="card-icon-neo">🛠️</div>
               <h3 className="card-title-neo">Implementation</h3>
               <p className="card-description-neo">Full setup and configuration of our platform tailored to your specific business requirements and goals.</p>
             </div>
 
-            <div className="feature-card-neo" style={{ '--idx': '2' }}>
+            <div className="feature-card-neo" style={{ '--delay': '0.2s' }}>
               <div className="card-icon-neo">👥</div>
               <h3 className="card-title-neo">Team Training</h3>
               <p className="card-description-neo">Comprehensive training programs for your team to maximize platform adoption and user proficiency.</p>
             </div>
 
-            <div className="feature-card-neo" style={{ '--idx': '3' }}>
+            <div className="feature-card-neo" style={{ '--delay': '0.3s' }}>
               <div className="card-icon-neo">📊</div>
               <h3 className="card-title-neo">Analytics & Reporting</h3>
               <p className="card-description-neo">In-depth analysis and custom reports to track productivity metrics and identify areas for improvement.</p>
             </div>
 
-            <div className="feature-card-neo" style={{ '--idx': '4' }}>
+            <div className="feature-card-neo" style={{ '--delay': '0.4s' }}>
               <div className="card-icon-neo">🔧</div>
               <h3 className="card-title-neo">Integration Support</h3>
               <p className="card-description-neo">Seamless integration with your existing tools and systems for a unified workflow management experience.</p>
             </div>
 
-            <div className="feature-card-neo" style={{ '--idx': '5' }}>
+            <div className="feature-card-neo" style={{ '--delay': '0.5s' }}>
               <div className="card-icon-neo">📞</div>
               <h3 className="card-title-neo">Dedicated Support</h3>
               <p className="card-description-neo">24/7 customer support from our expert team to ensure smooth operation and quick resolution of issues.</p>
@@ -98,7 +98,7 @@ export default function ServicesPage() {
           </div>
 
           <div className="packages-grid-neo">
-            <div className="package-card-neo" style={{ '--idx': '0' }}>
+            <div className="package-card-neo" style={{ '--delay': '0s' }}>
               <div className="package-badge-neo">Starter</div>
               <div className="package-price-neo">$29<span>/mo</span></div>
               <p className="package-description-neo">Perfect for small teams and startups</p>
@@ -111,7 +111,7 @@ export default function ServicesPage() {
               <button className="package-btn-neo">Choose Plan</button>
             </div>
 
-            <div className="package-card-neo featured" style={{ '--idx': '1' }}>
+            <div className="package-card-neo featured" style={{ '--delay': '0.1s' }}>
               <div className="package-badge-neo featured-badge">Professional</div>
               <div className="package-price-neo">$79<span>/mo</span></div>
               <p className="package-description-neo">Ideal for growing businesses</p>
@@ -125,7 +125,7 @@ export default function ServicesPage() {
               <button className="package-btn-neo featured-btn">Choose Plan</button>
             </div>
 
-            <div className="package-card-neo" style={{ '--idx': '2' }}>
+            <div className="package-card-neo" style={{ '--delay': '0.2s' }}>
               <div className="package-badge-neo">Enterprise</div>
               <div className="package-price-neo">Custom<span>/pricing</span></div>
               <p className="package-description-neo">For large organizations</p>
@@ -183,37 +183,37 @@ export default function ServicesPage() {
           </div>
 
           <div className="benefits-grid-neo">
-            <div className="benefit-card-neo" style={{ '--idx': '0' }}>
+            <div className="benefit-card-neo" style={{ '--delay': '0s' }}>
               <div className="benefit-icon-neo">🏢</div>
               <h3 className="benefit-title-neo">Enterprise Solutions</h3>
               <p className="benefit-text-neo">Scalable solutions designed for large organizations with complex requirements.</p>
             </div>
 
-            <div className="benefit-card-neo" style={{ '--idx': '1' }}>
+            <div className="benefit-card-neo" style={{ '--delay': '0.1s' }}>
               <div className="benefit-icon-neo">🔗</div>
               <h3 className="benefit-title-neo">API Integration</h3>
               <p className="benefit-text-neo">Custom API development and integration with third-party applications.</p>
             </div>
 
-            <div className="benefit-card-neo" style={{ '--idx': '2' }}>
+            <div className="benefit-card-neo" style={{ '--delay': '0.2s' }}>
               <div className="benefit-icon-neo">📱</div>
               <h3 className="benefit-title-neo">Mobile Optimization</h3>
               <p className="benefit-text-neo">Optimized mobile experience for on-the-go task management and team collaboration.</p>
             </div>
 
-            <div className="benefit-card-neo" style={{ '--idx': '3' }}>
+            <div className="benefit-card-neo" style={{ '--delay': '0.3s' }}>
               <div className="benefit-icon-neo">🔐</div>
               <h3 className="benefit-title-neo">Security & Compliance</h3>
               <p className="benefit-text-neo">Enhanced security measures and compliance support for regulated industries.</p>
             </div>
 
-            <div className="benefit-card-neo" style={{ '--idx': '4' }}>
+            <div className="benefit-card-neo" style={{ '--delay': '0.4s' }}>
               <div className="benefit-icon-neo">📊</div>
               <h3 className="benefit-title-neo">Custom Dashboards</h3>
               <p className="benefit-text-neo">Personalized dashboards and metrics tailored to your business KPIs.</p>
             </div>
 
-            <div className="benefit-card-neo" style={{ '--idx': '5' }}>
+            <div className="benefit-card-neo" style={{ '--delay': '0.5s' }}>
               <div className="benefit-icon-neo">🚀</div>
               <h3 className="benefit-title-neo">Performance Tuning</h3>
               <p className="benefit-text-neo">Advanced optimization to enhance system performance and user experience.</p>
@@ -229,37 +229,37 @@ export default function ServicesPage() {
           </div>
 
           <div className="why-us-grid-neo">
-            <div className="why-us-card-neo" style={{ '--idx': '0' }}>
+            <div className="why-us-card-neo" style={{ '--delay': '0s' }}>
               <div className="why-us-icon-neo">🎓</div>
               <h3 className="why-us-title-neo">Expert Team</h3>
               <p className="why-us-text-neo">Our team of certified professionals brings years of experience in task management and workflow optimization.</p>
             </div>
 
-            <div className="why-us-card-neo" style={{ '--idx': '1' }}>
+            <div className="why-us-card-neo" style={{ '--delay': '0.1s' }}>
               <div className="why-us-icon-neo">⏱️</div>
               <h3 className="why-us-title-neo">Quick Turnaround</h3>
               <p className="why-us-text-neo">Fast implementation and deployment without disrupting your current operations.</p>
             </div>
 
-            <div className="why-us-card-neo" style={{ '--idx': '2' }}>
+            <div className="why-us-card-neo" style={{ '--delay': '0.2s' }}>
               <div className="why-us-icon-neo">💰</div>
               <h3 className="why-us-title-neo">Cost Effective</h3>
               <p className="why-us-text-neo">Transparent pricing with no hidden fees. You get measurable ROI from day one.</p>
             </div>
 
-            <div className="why-us-card-neo" style={{ '--idx': '3' }}>
+            <div className="why-us-card-neo" style={{ '--delay': '0.3s' }}>
               <div className="why-us-icon-neo">🤝</div>
               <h3 className="why-us-title-neo">Partnership Approach</h3>
               <p className="why-us-text-neo">We become an extension of your team, invested in your long-term success.</p>
             </div>
 
-            <div className="why-us-card-neo" style={{ '--idx': '4' }}>
+            <div className="why-us-card-neo" style={{ '--delay': '0.4s' }}>
               <div className="why-us-icon-neo">📈</div>
               <h3 className="why-us-title-neo">Proven Results</h3>
               <p className="why-us-text-neo">Customers report 40% improvement in productivity and 30% reduction in project delays.</p>
             </div>
 
-            <div className="why-us-card-neo" style={{ '--idx': '5' }}>
+            <div className="why-us-card-neo" style={{ '--delay': '0.5s' }}>
               <div className="why-us-icon-neo">🌍</div>
               <h3 className="why-us-title-neo">Global Support</h3>
               <p className="why-us-text-neo">Round-the-clock support available in multiple languages for teams worldwide.</p>
@@ -313,21 +313,21 @@ export default function ServicesPage() {
           </div>
 
           <div className="testimonials-grid-neo">
-            <div className="testimonial-card-neo" style={{ '--idx': '0' }}>
+            <div className="testimonial-card-neo" style={{ '--delay': '0s' }}>
               <div className="testimonial-stars-neo">⭐⭐⭐⭐⭐</div>
               <p className="testimonial-quote-neo">"The implementation was seamless and the support team was incredibly helpful. Our team productivity has increased significantly."</p>
               <p className="testimonial-author-neo">— Sarah Johnson, Operations Manager</p>
               <p className="testimonial-company-neo">TechCorp Inc.</p>
             </div>
 
-            <div className="testimonial-card-neo" style={{ '--idx': '1' }}>
+            <div className="testimonial-card-neo" style={{ '--delay': '0.1s' }}>
               <div className="testimonial-stars-neo">⭐⭐⭐⭐⭐</div>
               <p className="testimonial-quote-neo">"Exceptional service from start to finish. The team understood our needs and delivered exactly what we wanted."</p>
               <p className="testimonial-author-neo">— Michael Chen, Project Lead</p>
               <p className="testimonial-company-neo">Digital Solutions Ltd.</p>
             </div>
 
-            <div className="testimonial-card-neo" style={{ '--idx': '2' }}>
+            <div className="testimonial-card-neo" style={{ '--delay': '0.2s' }}>
               <div className="testimonial-stars-neo">⭐⭐⭐⭐⭐</div>
               <p className="testimonial-quote-neo">"Best investment we made this year. The ROI was evident within the first month of deployment."</p>
               <p className="testimonial-author-neo">— Emma Williams, CFO</p>
