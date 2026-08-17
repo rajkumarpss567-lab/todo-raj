@@ -6,46 +6,42 @@ export default function ContactPage() {
     name: '',
     email: '',
     subject: '',
-    message: '',
+    message: ''
   });
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
   const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
+    setFormData(prev => ({
       ...prev,
-      [name]: value,
+      [name]: value
     }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    setIsLoading(true);
     setError(null);
+    setSuccess(false);
 
     try {
-      await submitContactForm(formData);
-      setSubmitted(true);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      
-      setTimeout(() => {
-        setSubmitted(false);
-      }, 5000);
-    } catch (err) {
-      // If backend endpoint doesn't exist, show user-friendly message but simulate success
-      if (err.message.includes('404')) {
-        setSubmitted(true);
-        setFormData({ name: '', email: '', subject: '', message: '' });
-        setTimeout(() => {
-          setSubmitted(false);
-        }, 5000);
-      } else {
-        setError(err.message || 'Failed to send message. Please try again.');
+      const response = await submitContactForm(formData);
+      if (response && response.success) {
+        setSuccess(true);
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+        setTimeout(() => setSuccess(false), 5000);
       }
+    } catch (err) {
+      setError(err.message || 'Failed to submit form. Please try again.');
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   };
 
@@ -54,66 +50,102 @@ export default function ContactPage() {
       <div className="contact-container">
         {/* Hero Section */}
         <section className="contact-hero">
-          <div className="hero-content">
-            <h1 className="hero-title">Get in Touch</h1>
-            <p className="hero-subtitle">Have a question or feedback? We'd love to hear from you.</p>
-            <p className="hero-description">Send us a message and we'll respond as soon as possible.</p>
+          <div className="contact-hero-background">
+            <div className="contact-hero-blob contact-hero-blob-1"></div>
+            <div className="contact-hero-blob contact-hero-blob-2"></div>
+          </div>
+          
+          <div className="contact-hero-content">
+            <div className="contact-badge">
+              <span className="contact-badge-icon">💬</span>
+              <span className="contact-badge-text">Get in Touch</span>
+            </div>
+            
+            <h1 className="contact-title">
+              We'd Love to Hear From You
+            </h1>
+            
+            <p className="contact-subtitle">
+              Have a question, suggestion, or feedback? Our team is here to help and would love to connect with you.
+            </p>
+            
+            <div className="contact-hero-stats">
+              <div className="contact-hero-stat">
+                <div className="contact-stat-value">24/7</div>
+                <div className="contact-stat-label">Support Available</div>
+              </div>
+              <div className="contact-hero-stat">
+                <div className="contact-stat-value">&lt;2h</div>
+                <div className="contact-stat-label">Response Time</div>
+              </div>
+              <div className="contact-hero-stat">
+                <div className="contact-stat-value">100%</div>
+                <div className="contact-stat-label">Satisfaction Rate</div>
+              </div>
+            </div>
           </div>
         </section>
 
-        <div className="contact-content">
-          {/* Contact Form Section */}
+        {/* Main Content */}
+        <div className="contact-main">
+          {/* Contact Form */}
           <section className="contact-form-section">
+            <h2 className="contact-section-title">Send Us a Message</h2>
+            
             <div className="form-wrapper">
-              {submitted && (
+              {success && (
                 <div className="success-message">
-                  <span className="success-icon">✓</span>
+                  <div className="success-icon">✓</div>
                   <div className="success-text">
-                    <p className="success-title">Thank you for your message!</p>
-                    <p className="success-description">We've received your inquiry and will get back to you shortly.</p>
+                    <div className="success-title">Message Sent Successfully!</div>
+                    <div className="success-description">
+                      Thank you for reaching out. We'll get back to you soon.
+                    </div>
                   </div>
                 </div>
               )}
-
+              
               {error && (
                 <div className="error-message-box">
-                  <span className="error-icon">✕</span>
+                  <div className="error-icon">!</div>
                   <div className="error-text">
-                    <p className="error-title">Something went wrong</p>
-                    <p className="error-description">{error}</p>
+                    <div className="error-title">Submission Failed</div>
+                    <div className="error-description">{error}</div>
                   </div>
                 </div>
               )}
 
               <form className="contact-form" onSubmit={handleSubmit}>
-                <div className="form-group">
-                  <label htmlFor="name" className="form-label">Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Your name"
-                    required
-                    className="form-input"
-                    disabled={loading}
-                  />
-                </div>
+                <div className="form-row">
+                  <div className="form-group form-group-half">
+                    <label htmlFor="name" className="form-label">Your Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      className="form-input"
+                      placeholder="John Doe"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      disabled={isLoading}
+                    />
+                  </div>
 
-                <div className="form-group">
-                  <label htmlFor="email" className="form-label">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="your@email.com"
-                    required
-                    className="form-input"
-                    disabled={loading}
-                  />
+                  <div className="form-group form-group-half">
+                    <label htmlFor="email" className="form-label">Email Address</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      className="form-input"
+                      placeholder="you@example.com"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      disabled={isLoading}
+                    />
+                  </div>
                 </div>
 
                 <div className="form-group">
@@ -122,12 +154,12 @@ export default function ContactPage() {
                     type="text"
                     id="subject"
                     name="subject"
+                    className="form-input"
+                    placeholder="What is this about?"
                     value={formData.subject}
                     onChange={handleChange}
-                    placeholder="What is this about?"
                     required
-                    className="form-input"
-                    disabled={loading}
+                    disabled={isLoading}
                   />
                 </div>
 
@@ -136,96 +168,122 @@ export default function ContactPage() {
                   <textarea
                     id="message"
                     name="message"
+                    className="form-textarea"
+                    placeholder="Tell us more about your inquiry..."
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Tell us more about your query..."
                     required
-                    className="form-textarea"
-                    rows="6"
-                    disabled={loading}
+                    disabled={isLoading}
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
                   className="form-submit-btn"
-                  disabled={loading || submitted}
+                  disabled={isLoading}
                 >
-                  {loading ? (
-                    <>
-                      <span className="button-spinner"></span>
-                      Sending...
-                    </>
-                  ) : submitted ? (
-                    <>
-                      <span className="button-icon">✓</span>
-                      Sent!
-                    </>
-                  ) : (
-                    <>
-                      <span className="button-icon">✉</span>
-                      Send Message
-                    </>
-                  )}
+                  <span className="button-icon">
+                    {isLoading ? <span className="button-spinner"></span> : '✉️'}
+                  </span>
+                  <span>{isLoading ? 'Sending...' : 'Send Message'}</span>
                 </button>
               </form>
             </div>
           </section>
 
-          {/* Info Section */}
-          <section className="contact-info-section">
-            <h2 className="section-subtitle">Other Ways to Reach Us</h2>
+          {/* Contact Methods */}
+          <section className="contact-methods-section">
+            <h2 className="contact-section-title">Other Ways to Connect</h2>
             
-            <div className="info-grid">
-              <div className="info-card">
-                <div className="info-icon">📧</div>
-                <h3 className="info-title">Email</h3>
-                <p className="info-text">support@taskflow.app</p>
-                <a href="mailto:support@taskflow.app" className="info-link">Send an email</a>
-              </div>
+            <div className="methods-grid">
+              <a href="mailto:support@taskflow.app" className="method-card">
+                <div className="method-icon">📧</div>
+                <h3 className="method-title">Email Us</h3>
+                <p className="method-value">support@taskflow.app</p>
+                <span className="method-link">Send Email</span>
+              </a>
 
-              <div className="info-card">
-                <div className="info-icon">🌐</div>
-                <h3 className="info-title">Website</h3>
-                <p className="info-text">taskflow.app</p>
-                <a href="https://taskflow.app" target="_blank" rel="noopener noreferrer" className="info-link">Visit our site</a>
-              </div>
+              <a href="https://taskflow.app" target="_blank" rel="noopener noreferrer" className="method-card">
+                <div className="method-icon">🌐</div>
+                <h3 className="method-title">Visit Website</h3>
+                <p className="method-value">taskflow.app</p>
+                <span className="method-link">Open Site</span>
+              </a>
 
-              <div className="info-card">
-                <div className="info-icon">⚙</div>
-                <h3 className="info-title">GitHub</h3>
-                <p className="info-text">taskflow/taskflow</p>
-                <a href="https://github.com/taskflow/taskflow" target="_blank" rel="noopener noreferrer" className="info-link">View on GitHub</a>
-              </div>
-            </div>
+              <a href="https://github.com/taskflow" target="_blank" rel="noopener noreferrer" className="method-card">
+                <div className="method-icon">⚙️</div>
+                <h3 className="method-title">GitHub</h3>
+                <p className="method-value">@taskflow-team</p>
+                <span className="method-link">View Repos</span>
+              </a>
 
-            {/* FAQ Section */}
-            <div className="faq-section">
-              <h3 className="section-subtitle">Frequently Asked Questions</h3>
-              <div className="faq-list">
-                <div className="faq-item">
-                  <h4 className="faq-question">How long does it take to get a response?</h4>
-                  <p className="faq-answer">We typically respond to inquiries within 24 hours during business days.</p>
-                </div>
-
-                <div className="faq-item">
-                  <h4 className="faq-question">Can I report a bug?</h4>
-                  <p className="faq-answer">Yes! Please describe the issue in detail, and we'll investigate it right away.</p>
-                </div>
-
-                <div className="faq-item">
-                  <h4 className="faq-question">Do you offer support for businesses?</h4>
-                  <p className="faq-answer">Absolutely! We'd love to discuss enterprise solutions with you.</p>
-                </div>
-
-                <div className="faq-item">
-                  <h4 className="faq-question">How can I contribute to the project?</h4>
-                  <p className="faq-answer">Visit our GitHub repository to learn about contributing guidelines and submit pull requests.</p>
-                </div>
-              </div>
+              <a href="https://twitter.com/taskflow" target="_blank" rel="noopener noreferrer" className="method-card">
+                <div className="method-icon">𝕏</div>
+                <h3 className="method-title">Follow Us</h3>
+                <p className="method-value">@taskflow</p>
+                <span className="method-link">Follow Now</span>
+              </a>
             </div>
           </section>
         </div>
+
+        {/* FAQ Section - Centered */}
+        <section className="contact-faq-section">
+          <div className="faq-wrapper">
+            <h2 className="faq-title">Frequently Asked Questions</h2>
+            <p className="faq-subtitle">Find answers to common questions about TaskFlow</p>
+            
+            <div className="faq-grid">
+              <div className="faq-card">
+                <div className="faq-card-icon">❓</div>
+                <h3 className="faq-card-title">How do I get started?</h3>
+                <p className="faq-card-answer">
+                  Simply create an account and start adding your tasks. Our intuitive interface makes it easy to organize and track your productivity from day one.
+                </p>
+              </div>
+
+              <div className="faq-card">
+                <div className="faq-card-icon">💾</div>
+                <h3 className="faq-card-title">Is my data secure?</h3>
+                <p className="faq-card-answer">
+                  Yes, we use industry-standard encryption to protect your data. All information is stored securely and we never share your personal data with third parties.
+                </p>
+              </div>
+
+              <div className="faq-card">
+                <div className="faq-card-icon">💰</div>
+                <h3 className="faq-card-title">What's the pricing?</h3>
+                <p className="faq-card-answer">
+                  TaskFlow is completely free! We offer a full-featured experience at no cost. Optional premium features are available for power users.
+                </p>
+              </div>
+
+              <div className="faq-card">
+                <div className="faq-card-icon">📱</div>
+                <h3 className="faq-card-title">Is there a mobile app?</h3>
+                <p className="faq-card-answer">
+                  Our responsive web app works great on mobile devices. Native apps for iOS and Android are coming soon with additional features.
+                </p>
+              </div>
+
+              <div className="faq-card">
+                <div className="faq-card-icon">🔄</div>
+                <h3 className="faq-card-title">Can I sync across devices?</h3>
+                <p className="faq-card-answer">
+                  Absolutely! Your tasks sync in real-time across all your devices. Start on your phone and continue on your desktop seamlessly.
+                </p>
+              </div>
+
+              <div className="faq-card">
+                <div className="faq-card-icon">🆘</div>
+                <h3 className="faq-card-title">How can I get help?</h3>
+                <p className="faq-card-answer">
+                  We're here to help! Use this contact form to reach our support team, or check out our documentation and tutorials.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
