@@ -13,6 +13,8 @@ async function request(path, options = {}) {
 
 export const getHealth = () => request('/health/');
 
+export const getAbout = () => request('/about/');
+
 export const getTodos = () => request('/todos/');
 
 export const createTodo = (data) => request('/todos/', {

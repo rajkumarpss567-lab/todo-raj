@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { getHealth } from './api';
 import TodosPage from './pages/TodosPage';
 import RemindersPage from './pages/RemindersPage';
+import AboutPage from './pages/AboutPage';
 
 export default function App() {
   const [health, setHealth] = useState(null);
@@ -36,6 +37,14 @@ export default function App() {
                 Reminders
               </button>
             </li>
+            <li>
+              <button
+                className={`nav-link ${currentPage === 'about' ? 'active' : ''}`}
+                onClick={() => setCurrentPage('about')}
+              >
+                About
+              </button>
+            </li>
           </ul>
         </div>
         <div className="health-indicator">
@@ -47,6 +56,7 @@ export default function App() {
 
       {currentPage === 'todos' && <TodosPage />}
       {currentPage === 'reminders' && <RemindersPage />}
+      {currentPage === 'about' && <AboutPage />}
     </>
   );
 }
